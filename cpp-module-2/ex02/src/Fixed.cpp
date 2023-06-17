@@ -77,3 +77,7 @@ std::ostream	&operator<<(std::ostream &str, Fixed const &fixed_nbr)
 	return (str << fixed_nbr.toFloat());
 }
 
+bool &Fixed::operator>(const Fixed& other) const
+{
+	return (this->toFloat() > other.toFloat());
+}
