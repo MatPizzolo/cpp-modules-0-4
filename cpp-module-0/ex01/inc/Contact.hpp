@@ -11,16 +11,16 @@ class Contact {
 		std::string lastName;
 		std::string nickName;
 		std::string darkestSecret;
-		int			phoneNumber;
+		std::string	phoneNumber;
 
 	public:
 		Contact();		
-		void contact(int index, std::string firstName, std::string lastName, std::string nickName, std::string darkestSecret, int phoneNumber);
+		void contact(int index, std::string firstName, std::string lastName, std::string nickName, std::string darkestSecret, std::string phoneNumber);
 		void displayInfo();
 		std::string getFirstName();
 		std::string getLastName();
 		std::string getNickName();
-		int getPhoneNumber();
+		std::string getPhoneNumber();
 
 };
 

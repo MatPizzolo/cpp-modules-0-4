@@ -1,8 +1,8 @@
-#include "../includes/Contact.hpp"
+#include "../inc/Contact.hpp"
 
 Contact::Contact() {}
 
-void Contact::contact(int index, std::string firstName, std::string lastName, std::string nickName, std::string darkestSecret, int phoneNumber) {
+void Contact::contact(int index, std::string firstName, std::string lastName, std::string nickName, std::string darkestSecret, std::string phoneNumber) {
 	this->index = index;
 	this->firstName = firstName;
     this->lastName = lastName;
@@ -22,4 +22,4 @@ void Contact::displayInfo(){
 std::string Contact::getFirstName() {return this->firstName; }
 std::string Contact::getLastName() {return this->lastName; }
 std::string Contact::getNickName() {return this->nickName; }
-int			Contact::getPhoneNumber() {return this->phoneNumber; }
+std::string	Contact::getPhoneNumber() {return this->phoneNumber; }

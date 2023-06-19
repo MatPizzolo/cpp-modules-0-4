@@ -1,15 +1,14 @@
 #include <iostream>
 
-#include "../includes/Contact.hpp"
-#include "../includes/PhoneBook.hpp"
+#include "../inc/Contact.hpp"
+#include "../inc/PhoneBook.hpp"
 
 int main ()
 {
 	PhoneBook phoneBook;
 	
-	int			run = 1;
 	std::string choice;
-	while (run) {
+	while (true) {
 		std::cout << "What would you like to do?\n";
 		std::cout << "ADD\n";
 		std::cout << "SEARCH\n";
@@ -17,7 +16,10 @@ int main ()
 		std::cout << "Enter your choice: ";
 		std::cin >> choice;
 		std::cout << std::endl;
-		
+		if (std::cin.eof()) {
+			std::cout << "Ctrl+D detected. Exiting..." << std::endl;
+			break;
+		}
 		if (choice == "ADD") {
 			phoneBook.addContact();
 			std::cout << std::endl;
@@ -26,7 +28,7 @@ int main ()
 			std::cout << std::endl;
 		} else if (choice == "EXIT") {
 			std::cout << "Exiting...\n";
-			run = 0;
+			break ;
 		} else {
 			std::cout << "Invalid choice. Please try again.\n";
 		}

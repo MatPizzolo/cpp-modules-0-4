@@ -20,15 +20,15 @@ class Fixed {
 		float toFloat(void) const;
 		int toInt (void) const;
 		bool &operator>(const Fixed& other) const;
-		Fixed &operator<(const Fixed& other);
-		Fixed &operator>=(const Fixed& other);
-		Fixed &operator<=(const Fixed& other);
-		Fixed &operator==(const Fixed& other);
-		Fixed &operator!=(const Fixed& other);
-		Fixed &operator+(const Fixed& other);
-		Fixed &operator-(const Fixed& other);
-		Fixed &operator*(const Fixed& other);
-		Fixed &operator/(const Fixed& other);
+		bool &operator<(const Fixed& other) const;
+		bool &operator>=(const Fixed& other) const;
+		bool &operator<=(const Fixed& other) const;
+		bool &operator==(const Fixed& other) const;
+		bool &operator!=(const Fixed& other) const;
+		float &operator+(const Fixed& other);
+		float &operator-(const Fixed& other);
+		float &operator*(const Fixed& other);
+		float &operator/(const Fixed& other);
 		
 		~Fixed();
 };

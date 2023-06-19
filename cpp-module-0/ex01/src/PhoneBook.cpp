@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 
-#include "../includes/PhoneBook.hpp"
+#include "../inc/PhoneBook.hpp"
 
 
 PhoneBook::PhoneBook() {
@@ -18,10 +18,8 @@ bool isNumber(const std::string& input) {
 }
 
 void PhoneBook::addContact() {
-	if (nbrContacts < MAX_CONTACTS) {
 		std::string name, lastname, nickName, inputNumber;
-		char darkestSecret[100];
-		int number;
+		char darkestSecret[50];
 
 		std::cout << "Enter contact information:\n";
 		std::cout << "Name: ";
@@ -30,60 +28,36 @@ void PhoneBook::addContact() {
 		std::cout << "Lastname: ";
 		std::cin >> lastname;
 
+		
+		std::cin.ignore();
 		std::cout << "Nickname: ";
 		std::cin >> nickName;
 
 		std::cout << "Darkest Secret: ";
 		std::cin.ignore();
 		std::cin.getline(darkestSecret, sizeof(darkestSecret));
-
-		std::cout << "Number: ";
-		std::cin >> inputNumber;
-		if (!isNumber(inputNumber)) {
-        	std::cout << "Invalid input. Please enter a valid number." << std::endl;
-			return ;
-		} else {
-			number = std::atoi(inputNumber.c_str());
+		if (std::cin.gcount() == 49) {
+			std::cin.clear();
+    		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');	
 		}
-
-		Contact newContact;
-		newContact.contact(nbrContacts, name, lastname, nickName, darkestSecret, number);
-		contacts[nbrContacts] = newContact;
-		nbrContacts++;
-		std::cout << "Contact added successfully!" << std::endl;
-	} else {
-		std::string name, lastname, nickName, inputNumber;
-		char darkestSecret[100];
-		int number;
-
-		std::cout << "Enter contact information:\n";
-		std::cout << "Name: ";
-		std::cin >> name;
-
-		std::cout << "Lastname: ";
-		std::cin >> lastname;
-
-		std::cout << "Nickname: ";
-		std::cin >> nickName;
-
-		std::cout << "Darkest Secret: ";
-		std::cin.ignore();
-		std::cin.getline(darkestSecret, sizeof(darkestSecret));
-
-		std::cout << "Number: ";
-		std::cin >> inputNumber;
-		if (!isNumber(inputNumber)) {
-        	std::cout << "Invalid input. Please enter a valid number." << std::endl;
-			return ;
-		} else {
-			number = std::atoi(inputNumber.c_str());
+		while (true) {
+			std::cout << "Number: ";
+			std::cin >> inputNumber;
+			if (!isNumber(inputNumber))
+				std::cout << "Invalid input. Please enter a valid number." << std::endl;
+			else
+				break ;
 		}
-
 		Contact newContact;
-		newContact.contact(7, name, lastname, nickName, darkestSecret, number);
-		contacts[7] = newContact;
+		if (nbrContacts < MAX_CONTACTS) {
+			newContact.contact(nbrContacts, name, lastname, nickName, darkestSecret, inputNumber);
+			contacts[nbrContacts] = newContact;
+			nbrContacts++;
+		} else {
+			newContact.contact(7, name, lastname, nickName, darkestSecret, inputNumber);
+			contacts[7] = newContact;
+		}
 		std::cout << "Contact added successfully!" << std::endl;
-	}
 }
 
 void PhoneBook::displayPhoneBook() {
@@ -101,7 +75,7 @@ void PhoneBook::displayPhoneBook() {
 	for (int i = 0; i < nbrContacts; ++i) {
 		std::string truncatedName = contacts[i].getFirstName();
 		std::string truncatedLastname = contacts[i].getLastName();
-		std::string truncatedNumber = contacts[i].getNickName();
+		std::string truncatedNick = contacts[i].getNickName();
 		
 		// Truncate strings if longer than 10 characters
 		if (truncatedName.length() > 10)
@@ -110,14 +84,14 @@ void PhoneBook::displayPhoneBook() {
 		if (truncatedLastname.length() > 10)
 			truncatedLastname = truncatedLastname.substr(0, 9) + ".";
 		
-		if (truncatedNumber.length() > 10)
-			truncatedNumber = truncatedNumber.substr(0, 9) + ".";
+		if (truncatedNick.length() > 10)
+			truncatedNick = truncatedNick.substr(0, 9) + ".";
 		
 		std::string indexToPrint = std::to_string(i + 1);
 		std::cout << std::setw(10) << std::right << indexToPrint
 				  << " | " << std::setw(10) << std::right << truncatedName
 				  << " | " << std::setw(10) << std::right << truncatedLastname
-				  << " | " << std::setw(10) << std::right << truncatedNumber << std::endl;
+				  << " | " << std::setw(10) << std::right << truncatedNick << std::endl;
 	}
 
 	std::string inputNumber;

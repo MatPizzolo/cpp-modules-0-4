@@ -15,3 +15,12 @@ void Zombie::announce(){
 Zombie* Zombie::newZombie(std::string name){
 	return new Zombie(name);
 }
+
+Zombie::~Zombie(){
+	std::cout << "Zombie " << this->name << " destroyed" << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+	this->name = name;
+}

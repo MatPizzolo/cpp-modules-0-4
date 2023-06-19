@@ -7,8 +7,8 @@ void	randomChump(std::string name);
 
 int main()
 {
-	Zombie z = newZombie("Alex");
-	z.announce;
+	Zombie *z = newZombie("Alex");
+	z->announce();
 	delete z;
 	randomChump("mateo");
 }

@@ -3,8 +3,8 @@
 
 bool fileExists(const std::string& filename)
 {
-    std::ifstream file(filename.c_str());
-    return file.good();
+	std::ifstream file(filename.c_str());
+	return file.good();
 }
 
 
@@ -45,25 +45,28 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	std::string line;
-	std::fstream fd;
 	std::string str1 = argv[2];
 	std::string str2 = argv[3];
 	std::string rep = ".replace";
 	std::ofstream fileout(argv[1] + rep);
-	fd.open(argv[1], std::fstream::in);
-  	while (fd)
+	std::ifstream fd(argv[1], std::fstream::in);
+  	bool loop = true;
+	while (loop)
 	{
 		std::getline(fd, line);
-		if (line.length() == 0)
-			fd.close();
+		if (fd.eof())
+			loop = false;
+		if (line.compare(str1) == 0)
+			fileout << str2 + "\n";
 		else
 		{
-			if (line.compare(str1) == 0)
-			{
-				fileout << str2 + "\n";
+			size_t pos = line.find(str1);
+			while (pos != std::string::npos) {
+				line.replace(pos, str1.length(), str2);
+				pos = line.find(str1, pos + str2.length());
 			}
-			else
-				fileout << line + "\n"; 
+			fileout << line + "\n"; 
 		}
 	}
+	fd.close();
 }

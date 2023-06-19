@@ -79,5 +79,60 @@ std::ostream	&operator<<(std::ostream &str, Fixed const &fixed_nbr)
 
 bool &Fixed::operator>(const Fixed& other) const
 {
-	return (this->toFloat() > other.toFloat());
+	bool res = this->toFloat() > other.toFloat();
+	return (res);
+}
+
+bool &Fixed::operator<(const Fixed& other) const
+{
+	bool res = this->toFloat() < other.toFloat();
+	return (res);
+}
+
+bool &Fixed::operator>=(const Fixed& other) const
+{
+	bool res = this->toFloat() >= other.toFloat();
+	return (res);
+}
+
+bool &Fixed::operator<=(const Fixed& other) const
+{
+	bool res = this->toFloat() <= other.toFloat();
+	return (res);
+}
+
+bool &Fixed::operator==(const Fixed& other) const
+{
+	bool res = this->toFloat() == other.toFloat();
+	return (res);
+}
+
+bool &Fixed::operator!=(const Fixed& other) const
+{
+	bool res = this->toFloat() != other.toFloat();
+	return (res);
+}
+
+float &Fixed::operator+(const Fixed& other)
+{
+	float res = this->toFloat() + other.toFloat();
+	return (res);
+}
+
+float &Fixed::operator-(const Fixed& other)
+{
+	float res = this->toFloat() - other.toFloat();
+	return (res);
+}
+
+float &Fixed::operator*(const Fixed& other)
+{
+	float res = this->toFloat() * other.toFloat();
+	return (res);
+}
+
+float &Fixed::operator/(const Fixed& other)
+{
+	float res = this->toFloat() / other.toFloat();
+	return (res);
 }

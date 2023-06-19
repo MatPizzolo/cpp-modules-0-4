@@ -1,6 +1,6 @@
-NAME = sed
+NAME = clap
 
-SRCS = main.cpp 
+SRCS = ./src/main.cpp ./src/ClapTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
