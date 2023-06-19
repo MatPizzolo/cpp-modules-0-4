@@ -16,7 +16,7 @@ int check_args(std::string filename, std::string str1, std::string str2)
 	fd.open (filename, std::fstream::in);
 	if (fd.is_open() == false)
 	{
-		std::cout << "File is no good" << std::endl;
+		std::cout << "Invalid File" << std::endl;
 		return 0;
 	}
 	if (str1.compare(str2) == 0)
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 		{
 			size_t pos = line.find(str1);
 			while (pos != std::string::npos) {
-				line.replace(pos, str1.length(), str2);
+				line = line.substr(0, pos) + str2 + line.substr(pos + str1.length());
 				pos = line.find(str1, pos + str2.length());
 			}
 			fileout << line + "\n"; 

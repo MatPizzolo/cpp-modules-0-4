@@ -3,6 +3,8 @@
 int main()
 {
 	Harl karen;
-	karen.complain("warning");
+	karen.complain("ERROR");
+	karen.complain("ERROR");
+	karen.complain("ERROR");
 
 }
