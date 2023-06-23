@@ -4,7 +4,7 @@
 class Fixed {
 	private:
 		int data;
-		static const int fract;
+		static const int fract = 8;
 
 	public:
 		Fixed();
