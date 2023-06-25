@@ -49,17 +49,16 @@ Fixed::~Fixed(){
 	std::cout << "Fixed destructor called" << std::endl;
 }
 
-
 Fixed::Fixed(const int param)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->data = (param * ft_pow(2, this->fract));
+	this->data = param << this->fract;
 }
 
 Fixed::Fixed(const float param)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->data = (param * ft_pow(2, this->fract));
+	this->data = (roundf(param * ft_pow(2, this->fract)));
 }
 
 float Fixed::toFloat(void) const
@@ -69,7 +68,7 @@ float Fixed::toFloat(void) const
 
 int Fixed::toInt(void) const
 {
-	return (this->data * ft_pow(2, -this->fract));
+	return (this->data >> this->fract);
 }
 
 std::ostream	&operator<<(std::ostream &str, Fixed const &fixed_nbr)
