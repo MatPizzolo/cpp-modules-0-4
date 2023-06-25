@@ -28,12 +28,10 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << this->name << " can't take damage, is dead" << std::endl;
 		return ;
 	}
-	if (this->energyPoints <= 0) {
-		std::cout << this->name << " can't take damage, has no energy points" << std::endl;
-		return ;
-	}
 	std::cout << this->name << " took " << amount << " of damage" << std::endl;
 	this->hitPoints -= amount;
+	if (hitPoints < 0)
+		this->hitPoints = 0;
 	this->energyPoints -= 1;
 }
 

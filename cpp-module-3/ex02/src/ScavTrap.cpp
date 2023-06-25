@@ -19,5 +19,6 @@ ScavTrap::~ScavTrap(){
 }
 
 void ScavTrap::guardGate(){
+	this->hitPoints -= 1;
 	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }

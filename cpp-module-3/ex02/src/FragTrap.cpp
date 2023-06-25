@@ -38,5 +38,6 @@ FragTrap &FragTrap::operator=(const FragTrap &src)
 
 void	FragTrap::highFiveGuys(void)
 {
+	this->hitPoints -= 1;
 	std::cout << "FragTrap " << this->name << ": You want a high five?\n\t*CLAP*" << std::endl;
 }

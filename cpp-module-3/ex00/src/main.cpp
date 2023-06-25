@@ -20,5 +20,9 @@ int main()
 			b.attack("Cody-clone");
 		b.beRepaired(3);
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		//b.takeDamage(54343432);
+		std::cout << b.getHP() << std::endl;
+		b.beRepaired(50);
+		std::cout << b.getHP() << std::endl;
 	}
 }
