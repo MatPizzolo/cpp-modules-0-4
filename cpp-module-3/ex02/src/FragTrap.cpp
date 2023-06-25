@@ -38,6 +38,10 @@ FragTrap &FragTrap::operator=(const FragTrap &src)
 
 void	FragTrap::highFiveGuys(void)
 {
-	this->hitPoints -= 1;
+	if (this->energyPoints <= 0) {
+		std::cout << this->name << " can't high five, it has not suficcient energy points" << std::endl;
+		return ;
+	}
+	this->energyPoints -= 1;
 	std::cout << "FragTrap " << this->name << ": You want a high five?\n\t*CLAP*" << std::endl;
 }

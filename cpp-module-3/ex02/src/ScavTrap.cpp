@@ -19,6 +19,10 @@ ScavTrap::~ScavTrap(){
 }
 
 void ScavTrap::guardGate(){
-	this->hitPoints -= 1;
+	if (this->energyPoints <= 0) {
+		std::cout << this->name << " can't guard, it has not suficcient energy points" << std::endl;
+		return ;
+	}
+	this->energyPoints -= 1;
 	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }
