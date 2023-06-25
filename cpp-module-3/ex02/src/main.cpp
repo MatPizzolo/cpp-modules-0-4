@@ -1,8 +1,8 @@
 #include "../inc/ClapTrap.hpp"
 #include "../inc/ScavTrap.hpp"
+#include "../inc/FragTrap.hpp"
 
-
-int main()
+void big_test()
 {
 	std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
 	{
@@ -43,4 +43,41 @@ int main()
 		d.attack("ScavTrap-clone");
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
 	}
+	std::cout << "\n\n### TESTING FRAGTRAP ###\n" << std::endl;
+	{
+		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		FragTrap e;
+		FragTrap f("Chadd");
+
+		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		e.highFiveGuys();
+		e.attack("some random dude");
+		e.takeDamage(101);
+		e.takeDamage(1);
+		e.attack("some random dude");
+		f.highFiveGuys();
+		// for(int i = 0; i < 101; i++)
+		// 	f.attack("FragTrap-clone");
+		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+	}
+}
+
+void	small_test()
+{
+	ClapTrap a("Bob");
+	ScavTrap b("Cody");
+	a.attack("some other robot");
+	a.takeDamage(10);
+	a.takeDamage(10);
+	a.beRepaired(5);
+	b.attack("nazi");
+	b.beRepaired(3);
+	for (int i = 0; i < 3; i++)
+		b.attack("Cody-clone");
+	b.beRepaired(3);
+}
+
+int main()
+{
+	big_test();
 }

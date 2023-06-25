@@ -11,6 +11,7 @@ class ClapTrap {
 		int attackDamage;
 
 	public:
+		ClapTrap();
 		ClapTrap(std::string name);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);

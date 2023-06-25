@@ -1,6 +1,6 @@
 NAME = clap
 
-SRCS = ./src/main.cpp ./src/ClapTrap.cpp ./src/ScavTrap.cpp
+SRCS = ./src/main.cpp ./src/ClapTrap.cpp ./src/ScavTrap.cpp ./src/FragTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
