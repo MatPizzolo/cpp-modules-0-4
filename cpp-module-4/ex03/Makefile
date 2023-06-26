@@ -1,6 +1,6 @@
-NAME = animal
+NAME = amateria
 
-SRCS = ./src/main.cpp ./src/Animal.cpp ./src/Dog.cpp ./src/Cat.cpp
+SRCS = ./src/main.cpp ./src/main.cpp ./src/aMateria.cpp ./src/character.cpp ./src/materiaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

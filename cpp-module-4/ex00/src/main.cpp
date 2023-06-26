@@ -1,6 +1,8 @@
-#include <iostream.h>
+#include <iostream>
 
 #include "../inc/Animal.hpp"
+#include "../inc/Dog.hpp"
+#include "../inc/Cat.hpp"
 
 int main()
 {

@@ -8,7 +8,7 @@ Animal::Animal()
 
 Animal::Animal(Animal &copy)
 {
-    this->type = copy.type;
+    type = copy.type;
 	std::cout << "Animal Copy Constructor called" << std::endl;
 }
 
@@ -31,5 +31,5 @@ void    Animal::makeSound(void) const
 
 Animal::~Animal()
 {
-    std::cout << "Destructor" << std::endl;
+    std::cout << "Animal Destructor called" << std::endl;
 }

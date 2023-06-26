@@ -1,17 +1,5 @@
 #include "../inc/Animal.hpp"
 
-Animal::Animal()
-{
-    this->type = "default";
-    std::cout << "Default constructor called" << std::endl;
-}
-
-Animal::Animal(Animal &copy)
-{
-    this->type = copy.type;
-	std::cout << "Animal Copy Constructor called" << std::endl;
-}
-
 Animal &Animal::operator=(const Animal &src)
 {
 	std::cout << "Animal Assignation operator called" << std::endl;
@@ -31,5 +19,5 @@ void    Animal::makeSound(void) const
 
 Animal::~Animal()
 {
-    std::cout << "Destructor" << std::endl;
+    std::cout << "Animal Destructor called" << std::endl;
 }

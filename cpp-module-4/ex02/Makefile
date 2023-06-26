@@ -1,6 +1,6 @@
 NAME = animal
 
-SRCS = ./src/main.cpp ./src/Animal.cpp ./src/Dog.cpp ./src/Cat.cpp
+SRCS = ./src/main.cpp ./src/Animal.cpp ./src/Dog.cpp ./src/Cat.cpp ./src/Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

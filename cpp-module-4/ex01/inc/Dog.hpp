@@ -3,14 +3,18 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog: public Animal{
+    private:
+        Brain* brain;
+
     public:
         Dog();
-        Dog(Dog &copy);
+        Dog(const Dog &copy);
 		Dog &operator=(const Dog &src);
         void    makeSound(void) const;
-        ~Dog();
+        virtual ~Dog();
 };
 
 #endif
