@@ -8,13 +8,17 @@
 class Dog: public Animal{
     private:
         Brain* brain;
+        std::string type;
 
     public:
         Dog();
         Dog(const Dog &copy);
 		Dog &operator=(const Dog &src);
-        virtual void    makeSound(void) const;
-        virtual ~Dog();
+        void makeSound(void) const;
+        Brain *getBrain( void ) const;
+        std::string getType(void) const;
+        void compareTo(Dog const & other_dog) const;
+        ~Dog();
 };
 
 #endif

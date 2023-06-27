@@ -6,6 +6,7 @@
 
 void    test()
 {
+	// Exercice example
 	const Animal* dog = new Dog();
 	const Animal* cat = new Cat();
 
@@ -13,7 +14,7 @@ void    test()
 
 	delete dog;
 	delete cat;
-	system("leaks -q animal");
+	system("leaks ex01");
 	std::cout << std::endl;
 	std::cout << std::endl;
 
@@ -21,12 +22,23 @@ void    test()
 	Dog medor;
 	Cat fifi;
 
+	Dog & medor_ref = medor;
+	Cat & fifi_ref = fifi;
+
 	std::cout << std::endl << "creating copies" << std::endl;
-	Dog medor_copy = Dog(medor);
-	Cat fifi_copy = Cat(fifi);
+	Dog medor_copy(medor_ref);
+	Cat fifi_copy(fifi_ref);
+
+	Dog & medor_copy_ref = medor_copy;
+	Cat & fifi_copy_ref = fifi_copy;
+
+	std::cout << std::endl << "comparing" << std::endl;
+	medor.compareTo(medor_copy_ref);
+	fifi.compareTo(fifi_copy_ref);
+	std::cout << std::endl;
+
 
 	// Array of animals
-	std::cout << "Creating Array" << std::endl;
 	const Animal	*(animal_array[4]);
 	std::cout << std::endl;
 	// Half filled with dogs
@@ -39,11 +51,9 @@ void    test()
 		animal_array[i] = new Cat();
 	std::cout << std::endl;
 
-	std::cout << "Deleting Array" << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete animal_array[i];
-	std::cout << "Finish deleting array" << std::endl;
-
+	std::cout << std::endl;
 }
 
 int main()

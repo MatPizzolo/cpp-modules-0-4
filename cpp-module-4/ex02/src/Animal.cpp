@@ -7,16 +7,6 @@ Animal &Animal::operator=(const Animal &src)
 	return *this;
 }
 
-std::string Animal::getType(void) const
-{
-    return (this->type);
-}
-
-void    Animal::makeSound(void) const
-{
-    std::cout << "def" << std::endl;
-}
-
 Animal::~Animal()
 {
     std::cout << "Animal Destructor called" << std::endl;

@@ -2,14 +2,14 @@
 
 Animal::Animal()
 {
-    this->type = "default";
     std::cout << "Default constructor called" << std::endl;
+    this->type = "default";
 }
 
 Animal::Animal(Animal &copy)
 {
-    type = copy.type;
 	std::cout << "Animal Copy Constructor called" << std::endl;
+    type = copy.type;
 }
 
 Animal &Animal::operator=(const Animal &src)

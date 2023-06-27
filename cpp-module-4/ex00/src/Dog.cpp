@@ -6,10 +6,10 @@ Dog::Dog()
     std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog(Dog &copy)
+Dog::Dog(Dog &copy): Animal(copy)
 {
-    this->type = copy.type;
 	std::cout << "Dog Copy Constructor called" << std::endl;
+    this->type = copy.type;
 }
 
 Dog &Dog::operator=(const Dog &src)

@@ -1,13 +1,9 @@
 #include "../inc/WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(), type("w animal")
+WrongAnimal::WrongAnimal()
 {
 	std::cout << "Wrong Animal constructor called\n";
-}
-
-WrongAnimal::~WrongAnimal()
-{
-	std::cout << "Wrong Animal desstructor called\n";
+	this->type = "wrong animal";
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal &copy)
@@ -24,10 +20,15 @@ WrongAnimal & WrongAnimal::operator=(WrongAnimal const & rhs)
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "... generic wrong animal sound ...\n";
+	std::cout << "def wrong\n";
 }
 
 std::string WrongAnimal::getType( void ) const
 {
 	return (this->type);
+}
+
+WrongAnimal::~WrongAnimal()
+{
+	std::cout << "Wrong Animal destructor called\n";
 }

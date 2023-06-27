@@ -13,8 +13,10 @@ class Cat: public Animal{
         Cat();
         Cat(const Cat &copy);
 		Cat &operator=(const Cat &src);
-        void    makeSound(void) const;
-        virtual ~Cat();
+        void makeSound(void) const;
+        Brain *getBrain( void ) const;
+        void compareTo(Cat const & other_cat) const;
+        ~Cat();
 };
 
 #endif
