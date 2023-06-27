@@ -5,12 +5,16 @@
 
 class ScavTrap: public ClapTrap {
 	private:
+		bool _isGuardingGate;
 
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
-		~ScavTrap();
+		ScavTrap(const ScavTrap &copy);
 		void guardGate();
+		bool getIsGuarding(void) const;
+		ScavTrap &operator=(const ScavTrap &other);
+		~ScavTrap();
 };
 
 #endif

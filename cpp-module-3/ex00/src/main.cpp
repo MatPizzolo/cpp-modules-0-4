@@ -20,6 +20,7 @@ int main()
 			b.attack("Cody-clone");
 		b.beRepaired(3);
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
-		//b.takeDamage(54343432);
+		b.takeDamage(54343432);
+		std::cout << "b has " << b.getHitPoints() << " hit points" << std::endl;
 	}
 }
