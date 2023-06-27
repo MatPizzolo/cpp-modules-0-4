@@ -10,7 +10,10 @@ ClapTrap::ClapTrap(std::string name): name(name), hitPoints(10), energyPoints(10
 
 ClapTrap::ClapTrap(const ClapTrap& copy){
 	std::cout << "Copy constructor called" << std::endl;
-	*this = copy;
+	this->name = copy.getName();
+	this->hitPoints = copy.getHitPoints();
+	this->energyPoints = copy.getEnergyPoints();
+	this->attackDamage = copy.getAttackDamage();
 }
 
 void ClapTrap::attack(const std::string& target)
