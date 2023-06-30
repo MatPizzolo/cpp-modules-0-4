@@ -40,6 +40,20 @@ bool ScavTrap::getIsGuarding(void) const
 	return (this->_isGuardingGate);
 }
 
+void ScavTrap::attack(const std::string& target)
+{
+	if (this->hitPoints <= 0) {
+		std::cout << this->name << " can't attack, is dead" << std::endl;
+		return ;
+	}
+	if (this->energyPoints <= 0) {
+		std::cout << this->name << " can't attack, it has not suficcient energy points" << std::endl;
+		return ;
+	}
+	std::cout << this->name << " slays " << target << ", causing " << this->attackDamage << " points of damage" << std::endl;
+	this->energyPoints -= 1;
+}
+
 ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
 	this->name = other.getName();
 	this->hitPoints = other.getHitPoints();
