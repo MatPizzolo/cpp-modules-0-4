@@ -1,15 +1,15 @@
 #include "../inc/WrongCat.hpp"
 
-WrongCat::WrongCat(): WrongAnimal()
+WrongCat::WrongCat()
 {
     std::cout << "WrongCat constructor called" << std::endl;
     this->type = "WrongCat";
 }
 
-WrongCat::WrongCat(WrongCat &copy): WrongAnimal(copy)
+WrongCat::WrongCat(WrongCat &copy)
 {
 	std::cout << "WrongCat copy Constructor called" << std::endl;
-    this->type = copy.type;
+    this->type = copy.getType();
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &src)

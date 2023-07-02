@@ -14,7 +14,7 @@ void    test()
 
 	delete dog;
 	delete cat;
-	system("leaks ex01");
+	system("leaks -q animal");
 	std::cout << std::endl;
 	std::cout << std::endl;
 

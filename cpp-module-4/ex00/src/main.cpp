@@ -15,17 +15,19 @@ int main()
 	std::cout << std::endl;
 	std::cout << "Dog->getType [" << dog->getType() << "] " << std::endl;
 	std::cout << "Cat->getType [" << cat->getType() << "] " << std::endl;
-	cat->makeSound();
 	dog->makeSound();
+	cat->makeSound();
 	animal->makeSound();
 
 	std::cout << std::endl;
 	const WrongAnimal* wrong_animal = new WrongAnimal();
 	const WrongAnimal* wrong_cat = new WrongCat();
+	const WrongCat* wrong_cat2 = new WrongCat();
 
 	std::cout << std::endl;
-	wrong_cat->makeSound();
 	wrong_animal->makeSound();
+	wrong_cat->makeSound();
+	wrong_cat2->makeSound();
 
 	std::cout << std::endl;
 	delete animal;
