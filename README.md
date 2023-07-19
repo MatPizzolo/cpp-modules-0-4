@@ -6,3 +6,4 @@
 |  2  | [CPP_01](https://github.com/MatPizzolo/cpp-modules-0-4/tree/main/cpp-module-1) | BraiiiiiiinnnzzzZ | New, pointers to members, references, switch statement	|
 |  3  | [CPP_02](https://github.com/MatPizzolo/cpp-modules-0-4/tree/main/cpp-module-2) | My First Orthodox Class      | ad-hoc polymorphism, operator overloading and Orthodox Cononical class form |
 |  4  | [CPP_03](https://github.com/MatPizzolo/cpp-modules-0-4/tree/main/cpp-module-3) | Aaaaand... OPEN!      | Inheritance |
+|  5  | [CPP_04](https://github.com/MatPizzolo/cpp-modules-0-4/tree/main/cpp-module-4) | I don't want to set the world on fire       | Subtype polymorphism, abstract classes, interfaces |
